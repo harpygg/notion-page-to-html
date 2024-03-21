@@ -7,6 +7,7 @@
   "scripts": {
     "prebuild": "rm -rf ./dist",
     "build": "tsc -p tsconfig.build.json",
+    "create-package": "npm run build && npm pack",
     "lint": "eslint '*/**/*.{js,ts}' --quiet --fix",
     "lint:staged": "lint-staged",
     "test": "jest --passWithNoTests --silent --noStackTrace --runInBand",
