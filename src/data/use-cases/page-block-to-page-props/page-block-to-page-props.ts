@@ -18,7 +18,7 @@ export class PageBlockToPageProps {
 
     return Promise.resolve({
       title,
-      ...(coverImage && { coverImageSrc: coverImage.base64, coverImagePosition: coverImage.position }),
+      ...(coverImage && { coverImageSrc: coverImage.src, coverImagePosition: coverImage.position }),
       ...(icon && { icon }),
     });
   }

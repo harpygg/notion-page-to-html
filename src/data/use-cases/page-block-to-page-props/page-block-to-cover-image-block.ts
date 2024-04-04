@@ -16,10 +16,11 @@ export class PageBlockToCoverImageSource {
     let head = '';
     if (pageCover.startsWith('/')) head = 'https://www.notion.so';
 
-    const base64 = await Base64Converter.convert(this.getImageAuthenticatedSrc(head + pageCover));
+    const src = this.getImageAuthenticatedSrc(head + pageCover);
+    const base64 = await Base64Converter.convert(src);
     const position = this._pageCoverPositionToPositionCenter(this._pageBlock.format.page_cover_position || 0.6);
 
-    return { base64, position };
+    return { base64, src, position };
   }
 
   private _isImageURL(url: string): boolean {
